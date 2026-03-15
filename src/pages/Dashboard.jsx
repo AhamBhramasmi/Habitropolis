@@ -17,6 +17,25 @@ function Dashboard() {
       <Navbar />
 
       <main style={{ padding: "20px" }}>
+
+        <div className="hero-quote">
+          <p className="quote-text">
+            “A HABIT MISSED ONCE IS A MISTAKE,
+            A HABIT MISSED TWICE IS THE START OF A{" "}
+            <span
+              className="new-habit-highlight"
+              onClick={() => setIsModalOpen(true)}
+            >
+              NEW HABIT
+            </span>
+            ”
+          </p>
+
+          <p className="quote-author">
+            — Aditya Gothe
+          </p>
+        </div>
+
         <h1>Habit Dashboard</h1>
 
         <section className="habit-grid">
