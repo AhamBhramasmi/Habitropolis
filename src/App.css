@@ -112,9 +112,8 @@
   margin: 32px 0 0;
 
   .logo {
-    height: 18px;
-  }
-
+  color: var(--text-color);
+}
   a {
     color: var(--text-h);
     font-size: 16px;
@@ -280,14 +279,10 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 .habit-card {
-  border: 1px solid #ddd;
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 16px;
   border-radius: 10px;
-  padding: 18px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .habit-header {
@@ -454,4 +449,43 @@
     transform: scale(1);
   }
 
+}
+.fire-icon {
+  font-size: 28px;
+  filter: grayscale(1);
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.fire-active {
+  filter: none;
+  opacity: 1;
+  animation: fireBurn 0.8s infinite alternate;
+}
+
+@keyframes fireBurn {
+
+  0% {
+    transform: scale(1) rotate(-2deg);
+    text-shadow: 0 0 4px orange;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(2deg);
+    text-shadow: 0 0 10px orange, 0 0 20px red;
+  }
+
+  100% {
+    transform: scale(1.05) rotate(-1deg);
+    text-shadow: 0 0 6px orange;
+  }
+
+}
+.theme-toggle {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #444;
+  color: white;
 }
