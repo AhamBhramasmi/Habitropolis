@@ -345,3 +345,42 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #111;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* LIGHT MODE */
+
+.light {
+  background: #ffffff;
+  color: #111;
+}
+
+/* DARK MODE */
+
+.dark {
+  background: #121212;
+  color: white;
+}

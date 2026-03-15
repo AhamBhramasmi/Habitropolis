@@ -1,29 +1,28 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ darkMode, setDarkMode }) {
   return (
-    <nav style={{
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "15px 20px",
-      background: "#111",
-      color: "white"
-    }}>
+    <nav className="navbar">
+
       <h2>Habitropolis</h2>
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-          Dashboard
-        </Link>
+      <div className="nav-links">
 
-        <Link to="/habits" style={{ color: "white", textDecoration: "none" }}>
-          Habits
-        </Link>
+        <Link to="/">Dashboard</Link>
 
-        <Link to="/stats" style={{ color: "white", textDecoration: "none" }}>
-          Stats
-        </Link>
+        <Link to="/habits">Habits</Link>
+
+        <Link to="/stats">Stats</Link>
+
+        <button
+          className="theme-toggle"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "☀ Light" : "🌙 Dark"}
+        </button>
+
       </div>
+
     </nav>
   );
 }

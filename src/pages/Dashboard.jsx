@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar";
 import HabitCard from "../components/HabitCard";
 import AddHabitModal from "../components/AddHabitModal";
 
-function Dashboard() {
+function Dashboard({ darkMode, setDarkMode }) {
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const habits = [
@@ -14,7 +15,8 @@ function Dashboard() {
 
   return (
     <div>
-      <Navbar />
+
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <main style={{ padding: "20px" }}>
 
@@ -39,20 +41,13 @@ function Dashboard() {
         <h1>Habit Dashboard</h1>
 
         <section className="habit-grid">
-          {habits.length === 0 ? (
-            <div className="empty-state">
-              <h2>😴 No habits yet</h2>
-              <p>Start building your streak!</p>
-            </div>
-          ) : (
-            habits.map((habit, index) => (
-              <HabitCard
-                key={index}
-                title={habit.title}
-                streak={habit.streak}
-              />
-            ))
-          )}
+          {habits.map((habit, index) => (
+            <HabitCard
+              key={index}
+              title={habit.title}
+              streak={habit.streak}
+            />
+          ))}
         </section>
 
         <button
@@ -66,6 +61,7 @@ function Dashboard() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+
       </main>
     </div>
   );
