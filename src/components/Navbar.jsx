@@ -16,6 +16,10 @@ function Navbar() {
           Dashboard
         </Link>
 
+        <Link to="/habits" style={{ color: "white", textDecoration: "none" }}>
+          Habits
+        </Link>
+
         <Link to="/stats" style={{ color: "white", textDecoration: "none" }}>
           Stats
         </Link>
