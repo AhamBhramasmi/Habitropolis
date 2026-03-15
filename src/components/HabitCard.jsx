@@ -1,6 +1,17 @@
+import { useState } from "react";
+
 function HabitCard({ title, streak }) {
 
-  const progress = 60; // placeholder for UI
+  const progress = 60; // placeholder
+  const [animateFire, setAnimateFire] = useState(false);
+
+  function handleComplete() {
+    setAnimateFire(true);
+
+    setTimeout(() => {
+      setAnimateFire(false);
+    }, 600);
+  }
 
   return (
     <div className="habit-card">
@@ -9,7 +20,9 @@ function HabitCard({ title, streak }) {
         <h3>{title}</h3>
       </div>
 
-      <p className="habit-streak">🔥 Streak: {streak} days</p>
+      <p className={`habit-streak ${animateFire ? "fire-animate" : ""}`}>
+        🔥 Streak: {streak} days
+      </p>
 
       <div className="progress-bar">
         <div
@@ -22,7 +35,10 @@ function HabitCard({ title, streak }) {
 
       <div className="habit-buttons">
 
-        <button className="complete-btn">
+        <button
+          className="complete-btn"
+          onClick={handleComplete}
+        >
           Mark Done
         </button>
 

@@ -436,3 +436,22 @@
   font-size: 12px;
   margin-top: 4px;
 }
+.fire-animate {
+  animation: firePop 0.6s ease;
+}
+
+@keyframes firePop {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
