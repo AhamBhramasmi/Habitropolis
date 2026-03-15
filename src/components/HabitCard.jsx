@@ -1,10 +1,21 @@
 import { useState } from "react";
 
 function HabitCard({ title, streak }) {
+
   const [completed, setCompleted] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   function handleComplete() {
+
     setCompleted(true);
+
+    // trigger animation
+    setAnimate(true);
+
+    setTimeout(() => {
+      setAnimate(false);
+    }, 600);
+
   }
 
   return (
@@ -13,7 +24,11 @@ function HabitCard({ title, streak }) {
       <div className="habit-header">
         <h3>{title}</h3>
 
-        <span className={`fire-icon ${completed ? "fire-active" : ""}`}>
+        <span
+          className={`fire-icon 
+          ${completed ? "fire-active" : ""} 
+          ${animate ? "fire-animate" : ""}`}
+        >
           🔥
         </span>
 
