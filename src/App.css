@@ -384,3 +384,14 @@
   background: #121212;
   color: white;
 }
+.logo {
+  color: white;
+}
+
+.dark .navbar {
+  background: #111;
+}
+
+.light .navbar {
+  background: #111;
+}

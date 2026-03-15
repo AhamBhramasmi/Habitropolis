@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import HabitCard from "../components/HabitCard";
 
-function Habits() {
+function Habits({ darkMode, setDarkMode }) {
 
   const habits = [
     { title: "Drink Water", streak: 4 },
@@ -12,9 +12,11 @@ function Habits() {
 
   return (
     <div>
-      <Navbar />
+
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <main style={{ padding: "20px" }}>
+
         <h1>All Habits</h1>
 
         <section className="habit-grid">
@@ -28,6 +30,7 @@ function Habits() {
         </section>
 
       </main>
+
     </div>
   );
 }

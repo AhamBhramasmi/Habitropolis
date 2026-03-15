@@ -4,7 +4,7 @@ function Navbar({ darkMode, setDarkMode }) {
   return (
     <nav className="navbar">
 
-      <h2>Habitropolis</h2>
+      <h2 className="logo">Habitropolis</h2>
 
       <div className="nav-links">
 
