@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import HabitCard from "../components/HabitCard";
 
 function Dashboard() {
   return (
@@ -9,8 +10,11 @@ function Dashboard() {
         <h1>Habit Dashboard</h1>
 
         <section className="habit-grid">
-          {/* Habit cards will appear here */}
-          <p>No habits yet</p>
+
+          <HabitCard title="Drink Water" streak={4} />
+          <HabitCard title="Exercise" streak={7} />
+          <HabitCard title="Read Book" streak={3} />
+
         </section>
 
         <button className="add-habit-btn">
