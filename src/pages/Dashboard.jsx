@@ -6,6 +6,12 @@ import AddHabitModal from "../components/AddHabitModal";
 function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const habits = [
+    { title: "Drink Water", streak: 4 },
+    { title: "Exercise", streak: 7 },
+    { title: "Read Book", streak: 3 }
+  ];
+
   return (
     <div>
       <Navbar />
@@ -14,9 +20,20 @@ function Dashboard() {
         <h1>Habit Dashboard</h1>
 
         <section className="habit-grid">
-          <HabitCard title="Drink Water" streak={4} />
-          <HabitCard title="Exercise" streak={7} />
-          <HabitCard title="Read Book" streak={3} />
+          {habits.length === 0 ? (
+            <div className="empty-state">
+              <h2>😴 No habits yet</h2>
+              <p>Start building your streak!</p>
+            </div>
+          ) : (
+            habits.map((habit, index) => (
+              <HabitCard
+                key={index}
+                title={habit.title}
+                streak={habit.streak}
+              />
+            ))
+          )}
         </section>
 
         <button
